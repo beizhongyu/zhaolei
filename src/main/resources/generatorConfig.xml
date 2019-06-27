@@ -2,10 +2,43 @@
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-
 <generatorConfiguration>
 
-    <context id="mms" targetRuntime="MyBatis3DynamicSql">
+    <context id="ams" targetRuntime="MyBatis3DynamicSql">
+
+        <plugin type="org.mybatis.generator.plugins.CachePlugin">
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <connectionFactory>
+            <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+            <property name="connectionURL" value="jdbc:mysql://10.1.7.103:3306/ams_daily"/>
+            <property name="userId" value="o2"/>
+            <property name="password" value="o2"/>
+        </connectionFactory>
+
+        <javaModelGenerator targetPackage="com.zl.first.test.model.master" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zl.first.test.mapper.master" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="ams_%">
+            <!--<domainObjectRenamingRule searchString="^ams" replaceString=""/>-->
+        </table>
+    </context>
+    <context id="o2" targetRuntime="MyBatis3DynamicSql">
 
         <plugin type="org.mybatis.generator.plugins.CachePlugin">
         </plugin>
