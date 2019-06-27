@@ -39,6 +39,12 @@
             <version>1.16.20</version>
             <scope>provided</scope>
         </dependency>
+        <!--poi 读取写入excel-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.5-FINAL</version>
+        </dependency>
     </dependencies>
 
     <build>
